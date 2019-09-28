@@ -13,14 +13,7 @@ install -m 755 files/rc.local		"${ROOTFS_DIR}/etc/"
 
 on_chroot << EOF
 systemctl disable hwclock.sh
-systemctl disable nfs-common
-systemctl disable rpcbind
-if [ "${ENABLE_SSH}" == "1" ]; then
-	systemctl enable ssh
-else
-	systemctl disable ssh
-fi
-systemctl enable regenerate_ssh_host_keys
+
 EOF
 
 if [ "${USE_QEMU}" = "1" ]; then
@@ -46,11 +39,9 @@ done
 EOF
 
 on_chroot << EOF
-setupcon --force --save-only -v
+
 EOF
 
 on_chroot << EOF
 usermod --pass='*' root
 EOF
-
-rm -f "${ROOTFS_DIR}/etc/ssh/"ssh_host_*_key*
