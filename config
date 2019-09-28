@@ -1,0 +1,5 @@
+IMG_NAME=aerial-os
+FIRST_USER_NAME=aerial
+FIRST_USER_PASS=linux
+KEYBOARD_LAYOUT="English (US)"
+DEPLOY_ZIP=0
