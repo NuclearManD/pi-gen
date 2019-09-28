@@ -1,5 +1,7 @@
 # pi-gen
 
+Modified by Dylan Brophy to be more lightweight and do what I want it to
+
 _Tool used to create the raspberrypi.org Raspbian images_
 
 
